@@ -1,0 +1,25 @@
+meta {
+  name: Scrape
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://0.0.0.0:8000/scrape
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "keyword": "Vinted",
+    "limit": 100,
+    "sort": "relevance",
+    "time_filter": "day"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
